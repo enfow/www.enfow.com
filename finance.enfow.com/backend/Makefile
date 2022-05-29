@@ -10,7 +10,7 @@ format:
 	isort src/
 
 run:
-	uvicorn src.main:app --reload 
+	PYTHONPATH=./src/ uvicorn main:app --reload 
 
 docker-build-dev:
 	docker build -t ${DEV_IMAGE} .
