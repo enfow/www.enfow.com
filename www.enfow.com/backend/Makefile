@@ -12,3 +12,6 @@ docker-build:
 
 docker-run:
 	docker run --rm -d --name www-enfow-com-prod -p 5005:3000 ${PROD_IMAGE}
+
+run-mongo:
+	docker run --name mongodb-container -d -p 27017:27017 mongo
