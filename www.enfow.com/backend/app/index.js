@@ -6,6 +6,7 @@ const bodyparser = require("body-parser")
 
 const studentController = require("./controllers/studentController")
 
+const PORT = process.env.PORT || 8000
 
 var app = express()
 
@@ -22,8 +23,12 @@ app.get("/", (req, res) => {
 
 app.set("views", path.join(__dirname, "/views/"))
 
-app.listen(3000, () => {
-  console.log("server started at port 3000")
+app.listen(PORT, () => {
+  console.log(`server started at port ${PORT}`)
 })
+
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from Express!" });
+});
 
 app.use("/student", studentController);
