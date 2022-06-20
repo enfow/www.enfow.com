@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
-import MapComponent from "./components/map.js";
+import BioComponent from "./components/bio.js";
+import { Layout, Breadcrumb, Menu } from "antd";
+
+
+const { Header, Footer, Content } = Layout;
 
 
 function App() {
@@ -17,10 +21,21 @@ function App() {
   })
 
   return (
-    <div>
-      <MapComponent />
-      <p>{!data ? "Loading..." : data}</p>
-    </div>
+
+    <Layout>
+      <Header class="App-header">
+        Header
+      </Header>
+      <div class="Content-wrapper">
+        <Content class="Content">
+          <BioComponent />
+          <p>{!data ? "Loading..." : data}</p>
+        </Content>
+      </div>
+      <Footer class="App-footer">
+        Footer
+      </Footer>
+    </Layout>
   );
 }
 

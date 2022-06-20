@@ -19,8 +19,8 @@ export default function MapComponent() {
       <iframe
         title="where-i-live-map"
         src={googleMapsSrc}
-        width="600" 
-        height="450" 
+        width="450" 
+        height="300" 
         style={{border:0}} 
         allowFullScreen="" 
         loading="lazy" 
